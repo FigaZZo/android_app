@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">laba3</string>
+    <string name="student_fio">Hello, Dias Arystanbek!</string>
+    <string name="student_fio_first_part">Hello,</string>
+    <string name="student_fio_second_part">Dias Arystanbek!</string>
+    <string name="student_question">What word would you like to learn today?</string>
+    <string name="student_question_first_part">What</string>
+    <string name="student_question_second_part">word</string>
+    <string name="student_question_third_part">would you like to learn today?</string>
+    <string name="hint_main_activity">Input text</string>
+    <string name="left_button_text">Get definition</string>
+    <string name="right_button_text_main">See feedbacks</string>
+    <string name="filter_text">Adjust filters:</string>
+    <string name="add_feedback">Add feedback</string>
+
+    <string-array name="functionality_filter">
+        <item>No filter</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="design_filter">
+        <item>No filter</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
