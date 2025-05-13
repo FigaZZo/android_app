@@ -37,7 +37,7 @@
         android:layout_margin="16dp"
         android:backgroundTint="#282727"
         android:padding="8dp"
-        android:text="@string/right_button_text_main"
+        android:text="@string/button_post_feedback"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

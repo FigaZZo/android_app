@@ -3,12 +3,7 @@ package com.example.laba3.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import androidx.recyclerview.widget.RecyclerView
 import com.example.laba3.MyApplication
 import com.example.laba3.R
 import com.example.laba3.ui.adapter.FeedbackAdapter
@@ -30,10 +24,6 @@ class FeedbacksPageActivity : AppCompatActivity() {
     }
 
     private val recyclerViewFeedback: LCEERecyclerView by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.recyclerViewFeedback) }
-    private val textViewFilter: TextView by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.textViewFilter) }
-    private val linearLayoutFilter: LinearLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.linearLayoutFilter) }
-    private val spinnerFunctionality: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.spinnerFunctionality) }
-    private val spinnerDesign: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.spinnerDesign) }
     private val buttonAddFeedback: Button by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.buttonAddFeedback) }
     private val feedbackAdapter = FeedbackAdapter()
     private val viewmodel by viewModels<FeedbackViewmodel> {
@@ -69,23 +59,22 @@ class FeedbacksPageActivity : AppCompatActivity() {
                     is Result.Error -> {
                         recyclerViewFeedback.showErrorView()
                     }
+                    is Result.Empty -> {
+                        recyclerViewFeedback.showEmptyView()
+                    }
                 }
             }
-
-            spinnerDesign.adapter = ArrayAdapter(
-                this@FeedbacksPageActivity,
-                R.layout.spinner_item_text,
-                resources.getStringArray(R.array.design_filter)
-            )
-            spinnerFunctionality.adapter = ArrayAdapter(
-                this@FeedbacksPageActivity,
-                R.layout.spinner_item_text,
-                resources.getStringArray(R.array.functionality_filter)
-            )
 
             buttonAddFeedback.setOnClickListener {
                 startActivity(AddFeedbackActivity.getIntent(this@FeedbacksPageActivity))
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch {
+            viewmodel.getFeedback()
         }
     }
 }

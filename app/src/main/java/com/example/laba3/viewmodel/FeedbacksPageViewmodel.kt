@@ -17,7 +17,11 @@ class FeedbackViewmodel(private val repository: FeedbackRepository): ViewModel()
     suspend fun getFeedback(): LiveData<Result<List<Feedback>>> {
         try {
             val data = repository.getAllFeedback()
-            feedbacks.value = Result.Success(data)
+            if (data.isEmpty()){
+                feedbacks.value = Result.Empty()
+            } else {
+                feedbacks.value = Result.Success(data)
+            }
         } catch (e: Exception) {
             feedbacks.value = Result.Error(e)
         }

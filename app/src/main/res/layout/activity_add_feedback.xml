@@ -2,10 +2,222 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/addFeedback"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AddFeedbackActivity"
-    tools:viewBindingIgnore="true">
+    android:background="@color/common_background_color"
+    tools:context=".ui.AddFeedbackActivity">
 
+    <TextView
+        android:id="@+id/textViewWelcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:padding="4dp"
+        android:text="@string/welcome_msg_add_feedback"
+        android:textAlignment="viewStart"
+        android:textColor="@color/common_text_color"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/textViewInputText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/textViewInputText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:padding="4dp"
+        android:text="@string/hint_mst_input_feedback"
+        android:textColor="@color/common_text_color"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/scrollViewEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcomeMessage"
+        app:layout_constraintVertical_weight="1" />
+
+    <ScrollView
+        android:id="@+id/scrollViewEditText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:padding="4dp"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toTopOf="@id/textViewSelectRatingFunc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInputText"
+        app:layout_constraintVertical_weight="5">
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:autofillHints="false"
+            android:gravity="top|start"
+            android:hint="Type here"
+            android:inputType="text"
+            android:textAlignment="gravity"
+            android:textColor="@color/common_text_color"
+            android:textColorHint="#C5C5C5"
+            android:textSize="12sp" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textViewSelectRatingFunc"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:padding="4dp"
+        android:text="@string/rate_functionality"
+        android:textColor="@color/common_text_color"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/radioGroupRatingFunc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewEditText"
+        app:layout_constraintVertical_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupRatingFunc"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewSelectRatingDesign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectRatingFunc"
+        app:layout_constraintVertical_weight="1">
+
+        <RadioButton
+            android:id="@+id/radioButtonFunc1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="1"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFunc2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="2"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFunc3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFunc4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="4"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFunc5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="5"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewSelectRatingDesign"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:padding="4dp"
+        android:text="@string/rate_our_app_s_design"
+        android:textColor="@color/common_text_color"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/radioGroupRatingDesign"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupRatingFunc"
+        app:layout_constraintVertical_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupRatingDesign"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonPushFeedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectRatingDesign"
+        app:layout_constraintVertical_weight="1">
+
+        <RadioButton
+            android:id="@+id/radioButtonDesign1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="1"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDesign2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="2"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDesign3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDesign4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="4"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDesign5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="5"
+            android:textColor="@color/common_text_color"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonPushFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#282727"
+        android:text="Post feedback"
+        android:textColor="@color/common_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupRatingDesign"
+        app:layout_constraintVertical_weight="2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,60 +13,10 @@
         android:id="@+id/recyclerViewFeedback"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/textViewFilter"
+        app:layout_constraintBottom_toTopOf="@id/buttonAddFeedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewFilter"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintVertical_weight="1"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/common_background_color"
-        android:padding="8dp"
-        android:text="@string/filter_text"
-        android:textColor="@color/common_text_color"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/linearLayoutFilter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayoutFilter"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintVertical_weight="1"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/buttonAddFeedback"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Spinner
-            android:id="@+id/spinnerFunctionality"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/functionality_filter"
-            android:gravity="bottom|start"
-            android:padding="8dp"
-            android:textAlignment="gravity" />
-
-        <Spinner
-            android:id="@+id/spinnerDesign"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/design_filter"
-            android:gravity="bottom|start"
-            android:padding="8dp"
-            android:textAlignment="gravity" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/buttonAddFeedback"

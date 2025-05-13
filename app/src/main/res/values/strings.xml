@@ -10,8 +10,13 @@
     <string name="hint_main_activity">Input text</string>
     <string name="left_button_text">Get definition</string>
     <string name="right_button_text_main">See feedbacks</string>
+    <string name="button_post_feedback">Post feedback</string>
     <string name="filter_text">Adjust filters:</string>
     <string name="add_feedback">Add feedback</string>
+    <string name="welcome_msg_add_feedback">Dear user! Leave your precious opinon below.</string>
+    <string name="hint_mst_input_feedback">Input your feedback below:</string>
+    <string name="rate_functionality">Rate our app\'s functionality:</string>
+    <string name="rate_our_app_s_design">Rate our app\'s design:</string>
 
     <string-array name="functionality_filter">
         <item>No filter</item>
